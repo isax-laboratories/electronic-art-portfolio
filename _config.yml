@@ -1,0 +1,14 @@
+title: Electronic Art
+description: Electronic objects, sculpture, experiments and props.
+
+collections:
+  artworks:
+    output: true
+    permalink: /art/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: artworks
+    values:
+      layout: artwork
