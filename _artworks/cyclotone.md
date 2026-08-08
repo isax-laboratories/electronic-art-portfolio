@@ -15,6 +15,7 @@ images:
   - /assets/images/cyclotone/06.jpg
   - /assets/images/cyclotone/07.jpg
 
+youtube: 5ipisNTELSA
 external_title: Project on Hackaday
 external_url: https://hackaday.io/project/181880-cyclotone-the-mechanical-punk-console-sequencer
 ---
