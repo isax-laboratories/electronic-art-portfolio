@@ -1,14 +1,15 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electronic Art — Isak</title>
+  <title>Electronic Art</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -20,11 +21,7 @@
     .wrap {
       max-width: 1300px;
       margin: auto;
-      padding: 50px 30px 80px;
-    }
-
-    a {
-      color: inherit;
+      padding: 50px 30px 100px;
     }
 
     .back {
@@ -34,36 +31,42 @@
       text-decoration: none;
     }
 
-    .back:hover {
-      color: white;
-    }
+    .back:hover { color: white; }
 
     h1 {
       font-size: clamp(42px, 7vw, 80px);
-      margin: 0 0 50px;
+      margin: 0 0 60px;
       letter-spacing: -2px;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
+      gap: 40px 30px;
     }
 
     .work {
+      color: inherit;
       text-decoration: none;
-      display: block;
     }
 
     .image {
       aspect-ratio: 4 / 3;
       background: #1b1b1b;
       margin-bottom: 15px;
-      transition: transform 0.2s ease;
+      overflow: hidden;
     }
 
-    .work:hover .image {
-      transform: translateY(-4px);
+    .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    .work:hover .image img {
+      transform: scale(1.02);
     }
 
     .work h2 {
@@ -72,7 +75,7 @@
     }
 
     .work p {
-      margin: 6px 0 0;
+      margin: 5px 0 0;
       color: #777;
     }
 
@@ -86,35 +89,41 @@
 
 <body>
 
-  <main class="wrap">
+<main class="wrap">
 
-    <a class="back" href="index.html">← Back</a>
+  <a class="back" href="{{ site.baseurl }}/">← Back</a>
 
-    <h1>Electronic Art</h1>
+  <h1>Electronic Art</h1>
 
-    <section class="gallery">
+  <section class="gallery">
 
-      <a class="work" href="hekfods.html">
-        <div class="image"></div>
-        <h2>HEKFODS</h2>
-        <p>Electronic sculpture</p>
-      </a>
+    {% for artwork in site.artworks %}
+      {% if artwork.category == "electronic-art" %}
 
-      <a class="work" href="work-02.html">
-        <div class="image"></div>
-        <h2>Untitled 02</h2>
-        <p>Electronic object</p>
-      </a>
+        <a class="work" href="{{ site.baseurl }}{{ artwork.url }}">
 
-      <a class="work" href="work-03.html">
-        <div class="image"></div>
-        <h2>Untitled 03</h2>
-        <p>Light & electronics</p>
-      </a>
+          <div class="image">
+            {% if artwork.cover %}
+              <img
+                src="{{ site.baseurl }}{{ artwork.cover }}"
+                alt="{{ artwork.title }}">
+            {% endif %}
+          </div>
 
-    </section>
+          <h2>{{ artwork.title }}</h2>
 
-  </main>
+          {% if artwork.year %}
+            <p>{{ artwork.year }}</p>
+          {% endif %}
+
+        </a>
+
+      {% endif %}
+    {% endfor %}
+
+  </section>
+
+</main>
 
 </body>
 </html>
