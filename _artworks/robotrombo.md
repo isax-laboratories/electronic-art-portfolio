@@ -12,8 +12,8 @@ images:
   - /assets/images/robotrombo/03.jpg
   - /assets/images/robotrombo/04.jpg
   - /assets/images/robotrombo/05.jpg
-  - /assets/images/robotrombo/06.jpeg
-  - /assets/images/robotrombo/07.jpeg
+  - /assets/images/robotrombo/06.jpg
+
 
 youtube: wM1vOAz0_Gc
 
