@@ -4,7 +4,7 @@ year: 2020
 category: electronic-art
 materials: Trombone, pneumatics, servos, electronics and MIDI control
 
-cover: /assets/images/robotrombo/cover.jpg
+cover: /assets/images/robotrombo/cover.JPG
 
 images:
   - /assets/images/robotrombo/01.jpg
@@ -12,8 +12,8 @@ images:
   - /assets/images/robotrombo/03.jpg
   - /assets/images/robotrombo/04.jpg
   - /assets/images/robotrombo/05.jpg
-  - /assets/images/robotrombo/06.jpg
-  - /assets/images/robotrombo/07.jpg
+  - /assets/images/robotrombo/06.jpeg
+  - /assets/images/robotrombo/07.jpeg
 
 youtube: wM1vOAz0_Gc
 
